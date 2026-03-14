@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Unofficial UTS QR finder for daily commuters. Filter by state and station code to quickly find station QR codes." />
+  <meta name="theme-color" content="#d97706" />
+  <title>UTS QR Finder</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg" />
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="eyebrow">Daily Commuter Utility</p>
+    <h1>UTS QR Finder</h1>
+    <p class="hero-copy">
+      Pick a state or union territory and station code to open the correct QR quickly.
+      Designed for fast access when you are on the move.
+    </p>
+    <div class="hero-actions">
+      <button id="install-btn" class="secondary-btn" type="button" hidden>Install App</button>
+      <p id="offline-note" class="offline-note">Works better when installed as a PWA for quick launch.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel favorites-panel" aria-labelledby="favorites-title">
+      <div class="favorites-head">
+        <h2 id="favorites-title">Quick Access</h2>
+        <button id="clear-favorites-btn" class="tiny-btn" type="button">Clear All</button>
+      </div>
+      <div id="favorites-list" class="favorites-list" aria-live="polite"></div>
+    </section>
+
+    <section class="finder-section" aria-label="Find and result">
+      <section class="panel search-panel" aria-labelledby="search-title">
+        <h2 id="search-title">Find QR Code</h2>
+
+        <form id="search-form" class="search-grid" autocomplete="off">
+          <label class="field" for="state-input">
+            <span>State / UT</span>
+            <input id="state-input" list="state-options" placeholder="Type code or name (example: DL or Delhi)" />
+            <datalist id="state-options"></datalist>
+          </label>
+
+          <label class="field" for="station-input">
+            <span>Station Code</span>
+            <input id="station-input" list="station-options" placeholder="Type station code (example: NDLS)" />
+            <datalist id="station-options"></datalist>
+          </label>
+
+          <button id="find-btn" type="submit">Show QR</button>
+        </form>
+
+        <div class="action-row">
+          <button id="share-btn" class="secondary-btn" type="button">Copy Share Link</button>
+          <button id="favorite-btn" class="secondary-btn" type="button" disabled>Add to Favorites</button>
+        </div>
+
+        <p id="meta-info" class="meta" aria-live="polite"></p>
+        <p id="action-status" class="meta" aria-live="polite"></p>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-title">
+        <h2 id="result-title">Result</h2>
+        <div id="result" class="result-empty" aria-live="polite">
+          Select a state and station code to view the QR.
+        </div>
+      </section>
+    </section>
+
+    <section class="panel disclaimer" aria-labelledby="notice-title">
+      <h2 id="notice-title">Notice</h2>
+      <p>
+        This is an unofficial helper page for commuters. QR assets belong to their respective owner.
+        The owner retains full rights over all QR codes.
+      </p>
+      <p>
+        QR Code sourced from <strong><a href="https://utsqrcode.co.in/" target="_blank" rel="noopener noreferrer">utsqrcode.co.in</a></strong>
+      </p>
+      <p>
+        Some station entries are currently marked as missing and will be added later.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="mailto:gmridun+utsqrcode@gmail.com">Contact Email</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=org.cris.aikyam&amp;hl=en_IN" target="_blank" rel="noopener noreferrer">Android App</a></li>
+        <li><a href="https://apps.apple.com/in/app/railone/id6473384334" target="_blank" rel="noopener noreferrer">iOS App</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="data/manifest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
