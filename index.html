@@ -1,24 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Unofficial UTS QR finder for daily commuters. Filter by state and station code to quickly find station QR codes." />
+  <meta name="description"
+    content="Unofficial UTS QR finder for daily commuters. Filter by state and station code to quickly find station QR codes." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="google-site-verification" content="6i4700XmJTKD1mMyET_X5Hr2temsg2-A1xgkJvI5_8o" />
+  <meta name="google-adsense-account" content="ca-pub-4292508430376713" />
   <meta name="theme-color" content="#d97706" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="UTS QR Finder" />
+  <meta property="og:title" content="UTS QR Finder - Find Station QR Codes Fast" />
+  <meta property="og:description" content="Find UTS station QR codes by state and station code in seconds." />
+  <meta property="og:url" content="/" />
+  <meta property="og:image" content="assets/icons/icon-512.svg" />
+  <meta property="og:image:alt" content="UTS QR Finder app icon" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="UTS QR Finder - Find Station QR Codes Fast" />
+  <meta name="twitter:description" content="Find UTS station QR codes by state and station code in seconds." />
+  <meta name="twitter:image" content="assets/icons/icon-512.svg" />
+  <link rel="canonical" href="/" />
+  <link rel="alternate" hreflang="en-IN" href="/" />
   <title>UTS QR Finder</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg" />
   <link rel="apple-touch-icon" href="assets/icons/icon-192.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "UTS QR Finder",
+      "description": "Unofficial UTS QR finder for daily commuters.",
+      "url": "/",
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "/?state={state_code}&station={station_code}",
+        "query-input": [
+          "required name=state_code",
+          "required name=station_code"
+        ]
+      }
+    }
+  </script>
 </head>
+
 <body>
   <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
   <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
 
   <header class="hero">
+    <div class="site-topbar">
+      <a class="site-title-link" href="index.html">
+        <strong>UTS QR Finder</strong>
+      </a>
+      <nav class="top-quick-links" aria-label="Quick links">
+        <a href="mailto:gmridun+utsqrcode@gmail.com">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="https://play.google.com/store/apps/details?id=org.cris.aikyam&amp;hl=en_IN" target="_blank"
+          rel="noopener noreferrer">Android App</a>
+        <a href="https://apps.apple.com/in/app/railone/id6473384334" target="_blank" rel="noopener noreferrer">iOS
+          App</a>
+      </nav>
+      <div class="top-status-rotator" aria-live="polite">
+        <span id="header-status-pill" class="status-pill"></span>
+      </div>
+      <a class="site-button-github" href="https://github.com/mridun-gupta/utsqr-directory" target="_blank"
+        rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewBox="0 0 33 32" class="logo"
+          aria-hidden="true" focusable="false">
+          <title>Github logo</title>
+          <path fill="#161514" fill-rule="evenodd"
+            d="M16.288 0C7.294 0 0 7.293 0 16.29c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.602 15.602 0 0 1 4.078-.549 15.62 15.62 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311 1.044 1.138 1.674 2.593 1.674 4.371 0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455C32.579 7.293 25.285 0 16.288 0">
+          </path>
+        </svg>
+        <span class="text">View on GitHub</span>
+      </a>
+    </div>
+
     <p class="eyebrow">Daily Commuter Utility</p>
     <h1>UTS QR Finder</h1>
     <p class="hero-copy">
@@ -31,6 +101,12 @@
     </div>
   </header>
 
+  <section class="ad-zone" aria-label="Advertisement">
+    <div id="adsense-top" class="ad-slot" role="complementary">
+      Ad space (top banner, responsive)
+    </div>
+  </section>
+
   <main class="container">
     <section class="panel favorites-panel" aria-labelledby="favorites-title">
       <div class="favorites-head">
@@ -38,6 +114,12 @@
         <button id="clear-favorites-btn" class="tiny-btn" type="button">Clear All</button>
       </div>
       <div id="favorites-list" class="favorites-list" aria-live="polite"></div>
+    </section>
+
+    <section class="ad-zone" aria-label="Advertisement">
+      <div id="adsense-mid-1" class="ad-slot" role="complementary">
+        Ad space (mid-page block)
+      </div>
     </section>
 
     <section class="finder-section" aria-label="Find and result">
@@ -77,6 +159,12 @@
       </section>
     </section>
 
+    <section class="ad-zone" aria-label="Advertisement">
+      <div id="adsense-inline" class="ad-slot" role="complementary">
+        Ad space (in-content, responsive)
+      </div>
+    </section>
+
     <section class="panel disclaimer" aria-labelledby="notice-title">
       <h2 id="notice-title">Notice</h2>
       <p>
@@ -84,26 +172,67 @@
         The owner retains full rights over all QR codes.
       </p>
       <p>
-        QR Code sourced from <strong><a href="https://utsqrcode.co.in/" target="_blank" rel="noopener noreferrer">utsqrcode.co.in</a></strong>
+        QR Code sourced from <strong><a href="https://utsqrcode.co.in/" target="_blank"
+            rel="noopener noreferrer">utsqrcode.co.in</a></strong>
       </p>
       <p>
         Some station entries are currently marked as missing and will be added later.
       </p>
     </section>
+
+    <section class="panel submit-panel" aria-labelledby="submit-title">
+      <h2 id="submit-title">Share Missing QR Code via GitHub Issue</h2>
+      <p class="submit-intro">
+        Have a missing station QR? Please open a GitHub issue and upload the QR image in the issue description or
+        comments.
+      </p>
+
+      <div class="submit-issue-actions">
+        <a class="issue-btn"
+          href="https://github.com/mridun-gupta/utsqr-directory/issues/new?title=Add%20Missing%20UTS%20QR%20Code&body=Please%20fill%20the%20details%20below.%0A%0AState%2FUT%20Code%3A%20%0AStation%20Code%3A%20%0AStation%20Name%3A%20%0A%0APlease%20attach%20or%20drag%20the%20QR%20image%20in%20this%20issue.%0ASource%20or%20notes%3A%20"
+          target="_blank" rel="noopener noreferrer">Create GitHub Issue</a>
+        <a class="issue-btn secondary-btn" href="https://github.com/mridun-gupta/utsqr-directory/issues" target="_blank"
+          rel="noopener noreferrer">View Existing Issues</a>
+      </div>
+
+      <div class="submit-history">
+        <h3>How to Submit Properly</h3>
+        <ul class="issue-steps">
+          <li>Click Create GitHub Issue.</li>
+          <li>Fill state code, station code, and station name.</li>
+          <li>Upload QR image directly in the issue.</li>
+          <li>Submit issue. We will review and add it.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ad-zone" aria-label="Advertisement">
+      <div id="adsense-bottom" class="ad-slot ad-slot-tall" role="complementary">
+        Ad space (bottom unit)
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      <h2>Quick Links</h2>
-      <ul>
-        <li><a href="mailto:gmridun+utsqrcode@gmail.com">Contact Email</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=org.cris.aikyam&amp;hl=en_IN" target="_blank" rel="noopener noreferrer">Android App</a></li>
-        <li><a href="https://apps.apple.com/in/app/railone/id6473384334" target="_blank" rel="noopener noreferrer">iOS App</a></li>
-      </ul>
+      <p class="copyright-row">
+        © 2026. A
+        <span class="owner-hover" tabindex="0">Mridun Gupta
+          <span class="owner-popover" role="menu" aria-label="Follow links">
+            <a role="menuitem" href="https://github.com/mridun-gupta" target="_blank"
+              rel="noopener noreferrer">GitHub</a>
+            <a role="menuitem" href="https://www.linkedin.com/in/mridun-gupta" target="_blank"
+              rel="noopener noreferrer">LinkedIn</a>
+            <a role="menuitem" href="mailto:gmridun+utsqrcode@gmail.com">Email</a>
+          </span>
+        </span>
+        project. <a href="LICENSE">License</a>. Made with ❤️ in Haryana, India.
+      </p>
     </div>
   </footer>
 
   <script src="data/manifest.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>

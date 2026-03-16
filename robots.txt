@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your production sitemap URL after deployment.
+# Sitemap: https://uts-qrcode.vercel.app/sitemap.xml

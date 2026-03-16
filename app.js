@@ -23,6 +23,7 @@
   const favoritesList = document.getElementById("favorites-list");
   const clearFavoritesBtn = document.getElementById("clear-favorites-btn");
   const installBtn = document.getElementById("install-btn");
+  const headerStatusPill = document.getElementById("header-status-pill");
 
   let deferredInstallPrompt = null;
 
@@ -447,10 +448,31 @@
     });
   }
 
+  function setupHeaderStatusRotator() {
+    if (!headerStatusPill) {
+      return;
+    }
+
+    const items = [
+      { text: "Verified Platform", className: "status-pill-verified" },
+      { text: "Mobile Optimized", className: "status-pill-mobile" },
+      { text: "24/7 Available", className: "status-pill-available" }
+    ];
+
+    let index = 0;
+    window.setInterval(() => {
+      index = (index + 1) % items.length;
+      const next = items[index];
+      headerStatusPill.className = `status-pill ${next.className}`;
+      headerStatusPill.textContent = next.text;
+    }, 2600);
+  }
+
   setStateOptions();
   setStationOptions("");
   setMetaText("");
   renderFavorites();
+  setupHeaderStatusRotator();
   setupPwaInstall();
   setupServiceWorker();
   applySearchFromUrl();
